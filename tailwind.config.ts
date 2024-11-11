@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss";
 
-const colors = {
+const boxShadow = {};
+
+export const colors = {
   backgroundSecondary: "#F2F2F7",
   backgroundPrimary: "#FFFFFF",
   white: "#ffffff",
@@ -60,13 +62,13 @@ export default {
           fontWeight: "500",
           letterSpacing: "-0.02em",
         },
-        ".text-body3-sm": {
-          fontSize: "15px",
+        ".text-body3-md": {
+          fontSize: "14px",
           fontWeight: "500",
           letterSpacing: "-0.02em",
         },
         ".text-body3-rg": {
-          fontSize: "15px",
+          fontSize: "14px",
           fontWeight: "400",
           letterSpacing: "-0.02em",
         },
