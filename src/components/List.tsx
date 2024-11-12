@@ -11,12 +11,10 @@ export default function List() {
     setIsOpen(!isOpen);
   };
 
-  const handleDeleteButton = () => {
-    console.log("삭제");
-  };
+  const handleDeleteButton = () => {};
 
   const { isChecked, handleCheckboxClick } = useCheckbox();
-  console.log(isChecked);
+
   return (
     <div className="flex overflow-hidden ">
       <div className="w-[296px] h-[50px]  flex    ">
