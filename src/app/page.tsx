@@ -1,4 +1,6 @@
+import CheckBoxEmpty from "@/components/CheckBoxEmpty";
 import DropDown from "@/components/DropDown";
+import List from "@/components/List";
 
 export default function Home() {
   return (
@@ -19,6 +21,7 @@ export default function Home() {
           },
         ]}
       />
+      <List />
     </>
   );
 }

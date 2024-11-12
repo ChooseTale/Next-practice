@@ -35,8 +35,8 @@ export default function DropDown({ dateList }: { dateList: DropDownProps[] }) {
         </div>
       </div>
       {isOpen && (
-        <div className="flex mt-[4px]">
-          <div className="w-[110px] bg-white rounded-[4px] border border-gray-100">
+        <div className="flex mt-[4px] ">
+          <div className="w-[110px] bg-white rounded-[4px] border border-gray-100 shadow-empasize">
             <div className="flex flex-col">
               {dateList.map((date, index) => {
                 return (

@@ -1,7 +1,5 @@
 import type { Config } from "tailwindcss";
 
-const boxShadow = {};
-
 export const colors = {
   backgroundSecondary: "#F2F2F7",
   backgroundPrimary: "#FFFFFF",
@@ -37,6 +35,15 @@ export default {
   plugins: [
     ({ addComponents }: { addComponents: any }) => {
       addComponents({
+        ".text-textTertiary": {
+          color: textColors.textTertiary,
+        },
+        ".text-textDefault": {
+          color: textColors.textDefault,
+        },
+        ".text-textSecondary": {
+          color: textColors.textSecondary,
+        },
         ".text-title-bold": {
           fontSize: "24px",
           fontWeight: "700",
@@ -81,6 +88,22 @@ export default {
           fontSize: "12px",
           fontWeight: "500",
           letterSpacing: "-0.02em",
+        },
+        ".shadow-normal": {
+          boxShadow:
+            "0px 0px 1px 0px #00000014, 0px 0px 1px 0px #00000014, 0px 1px 2px 0px #0000001F",
+        },
+        ".shadow-empasize": {
+          boxShadow:
+            "0px 0px 1px 0px #00000014, 0px 1px 4px 0px #00000014, 0px 2px 8px 0px #0000001F",
+        },
+        ".shadow-strong": {
+          boxShadow:
+            "0px 0px 4px 0px #00000014, 0px 4px 8px 0px #00000014, 0px 6px 12px 0px #0000001F",
+        },
+        ".shadow-heavy": {
+          boxShadow:
+            "0px 0px 8px 0px #00000014, 0px 8px 16px 0px #00000014, 0px 16px 20px 0px #0000001F",
         },
       });
     },

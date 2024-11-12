@@ -1,11 +1,18 @@
 import { colors } from "../../tailwind.config";
-import { camera, chevronDown, chevronLeft, plus } from "../../public/svg";
+import {
+  camera,
+  chevronDown,
+  chevronLeft,
+  plus,
+  check,
+} from "../../public/svg";
 
 const SvgIcons = {
   camera,
   chevronDown,
   chevronLeft,
   plus,
+  check,
 };
 
 type SvgName = keyof typeof SvgIcons;
@@ -16,6 +23,7 @@ type SvgOptions = {
     height?: number;
   };
   color?: keyof typeof colors;
+  viewBox?: string;
 };
 
 export default function Svg({
@@ -32,7 +40,7 @@ export default function Svg({
       <SvgComponent
         width={options?.size?.width}
         height={options?.size?.height}
-        viewBox="0 0 24 24"
+        viewBox={options?.viewBox || "0 0 24 24"}
       />
     </div>
   );
