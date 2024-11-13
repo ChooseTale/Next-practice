@@ -26,7 +26,7 @@ export default function List({
       <div className="w-[296px] h-[50px]  flex    ">
         <div
           className={`flex absolute justify-center items-center transition-transform duration-300 ease-in-out w-[296px] h-[50px] rounded-[8px] bg-white  z-10  ${
-            isOpen ? "translate-x-[-50px]" : ""
+            isOpen ? "translate-x-[-56px]" : ""
           }`}
         >
           <div

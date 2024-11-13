@@ -12,6 +12,10 @@ export default function SelectCategory() {
     router.push(`/main?category=${category}`);
   };
 
+  if (!searchParams.get("category")) {
+    return;
+  }
+
   if (
     searchParams.get("category") !== "todo" &&
     searchParams.get("category") !== "calendar"

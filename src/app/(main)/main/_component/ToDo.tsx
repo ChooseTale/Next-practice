@@ -5,6 +5,7 @@ import Title from "./ToDo/Title";
 import TodoList from "./ToDo/TodoList";
 import Large from "@/components/buttons/Large";
 import BottomSheet from "@/components/BottomSheet";
+import CreateTodoSheet from "./ToDo/CreateTodoSheet";
 
 export default function ToDo() {
   const [isBottomSheetVisible, setIsBottomSheetVisible] = useState(false);
@@ -18,14 +19,12 @@ export default function ToDo() {
           <Large text="새 할일" action={() => setIsBottomSheetVisible(true)} />
         </div>
       </div>
-      <div className="z-30">
-        <BottomSheet
-          isVisible={isBottomSheetVisible}
-          onClose={() => setIsBottomSheetVisible(false)}
-        >
-          <div>안녕하세요</div>
-        </BottomSheet>
-      </div>
+
+      <BottomSheet
+        isVisible={isBottomSheetVisible}
+        onClose={() => setIsBottomSheetVisible(false)}
+        children={<CreateTodoSheet />}
+      ></BottomSheet>
     </div>
   );
 }
