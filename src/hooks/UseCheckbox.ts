@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function useCheckbox() {
-  const [isChecked, setIsChecked] = useState(false);
+export default function useCheckbox(isDone: boolean) {
+  const [isChecked, setIsChecked] = useState(isDone);
 
   const handleCheckboxClick = () => {
     setIsChecked(!isChecked);

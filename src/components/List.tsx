@@ -4,7 +4,13 @@ import React, { useState } from "react";
 import CheckBoxEmpty from "./CheckBoxEmpty";
 import useCheckbox from "@/hooks/UseCheckbox";
 
-export default function List() {
+export default function List({
+  title,
+  isDone,
+}: {
+  title: string;
+  isDone: boolean;
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -13,10 +19,10 @@ export default function List() {
 
   const handleDeleteButton = () => {};
 
-  const { isChecked, handleCheckboxClick } = useCheckbox();
+  const { isChecked, handleCheckboxClick } = useCheckbox(isDone);
 
   return (
-    <div className="flex overflow-hidden ">
+    <div className="flex relative overflow-hidden ">
       <div className="w-[296px] h-[50px]  flex    ">
         <div
           className={`flex absolute justify-center items-center transition-transform duration-300 ease-in-out w-[296px] h-[50px] rounded-[8px] bg-white  z-10  ${
@@ -24,12 +30,12 @@ export default function List() {
           }`}
         >
           <div
-            className={`text-body1-md  ml-[10px] ${
+            className={`text-body1-md w-[244px]  ml-[10px] ${
               isChecked ? "text-textTertiary" : ""
             }`}
             onClick={handleClick}
           >
-            하나둘셋넷다여일곱여덟ㅅ아옵열열하나
+            {title}
           </div>
           <div className="flex ml-[8px]">
             <CheckBoxEmpty
@@ -41,7 +47,7 @@ export default function List() {
       </div>
 
       <div
-        className={` absolute w-[100px] h-[50px] left-[195px] rounded-[8px] justify-end bg-systemRed flex items-center  transition-opacity duration-300 ease-in-out `}
+        className={` absolute w-[100px] h-[48px] top-[1px] left-[190px] rounded-[8px] justify-end bg-systemRed flex items-center  transition-opacity duration-300 ease-in-out `}
       >
         <div
           className="text-body3-md text-white mr-[12px]"

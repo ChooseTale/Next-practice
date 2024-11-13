@@ -3,7 +3,6 @@
 import SegmentedControl from "@/components/SegmentedControl";
 import React from "react";
 
-import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 export default function SelectCategory() {
   const searchParams = useSearchParams();

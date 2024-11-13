@@ -19,7 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${pretendard.variable}`}>{children}</body>
+      <body
+        className={`${pretendard.variable} flex flex-col items-center justify-center `}
+      >
+        <div className="ml-[20px] mr-[20px] w-[320px]">{children}</div>
+      </body>
     </html>
   );
 }

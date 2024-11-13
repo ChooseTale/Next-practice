@@ -1,3 +1,6 @@
+"use client";
+
+import Achivement from "@/components/Achivement";
 import React from "react";
 
 export default function Title({
@@ -9,12 +12,15 @@ export default function Title({
 }) {
   return (
     <div className="flex flex-row items-center justify-between">
-      <div className="w-[237px] h-[87px] bg-blue-500">
+      <div className="w-[237px] h-[87px]  text-title-bold">
         {`${nickName}님 오늘은`}
         <br />
-        {`${workCount}개의 할일이 있어요`}
+        <span className="text-primary">{`${workCount}개`}</span>
+        {`의 할일이 있어요`}
       </div>
-      <div className="w-[67px] h-[87px] bg-blue-500">Title</div>
+      <Achivement width={67} height={67} percentage={100} />
     </div>
   );
 }
+
+/* Ellipse 3 */
