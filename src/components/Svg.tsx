@@ -41,6 +41,7 @@ export default function Svg({
         width={options?.size?.width}
         height={options?.size?.height}
         viewBox={options?.viewBox || "0 0 24 24"}
+        fill={options?.color ? colors[options.color] : "none"}
       />
     </div>
   );

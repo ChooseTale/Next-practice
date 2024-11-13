@@ -1,5 +1,6 @@
 import Large from "@/components/buttons/Large";
 import CheckBoxEmpty from "@/components/CheckBoxEmpty";
+import Client from "@/components/Client";
 import DropDown from "@/components/DropDown";
 import List from "@/components/List";
 
@@ -23,6 +24,7 @@ export default function Home() {
         ]}
       />
       <List />
+      <Client />
     </>
   );
 }
