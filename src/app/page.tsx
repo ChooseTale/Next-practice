@@ -23,7 +23,7 @@ export default function Home() {
           },
         ]}
       />
-      <List />
+      <List title="제목이야 제목" isDone={false} />
       <Client />
     </>
   );

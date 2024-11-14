@@ -13,6 +13,7 @@ export default function ToDo() {
   return (
     <div className="w-full h-screen mt-[24px] ">
       <Title nickName="닉네임" workCount={10} />
+
       <TodoList />
       <div className="fixed flex left-0   bottom-[20px] justify-center w-full">
         <div className="flex">

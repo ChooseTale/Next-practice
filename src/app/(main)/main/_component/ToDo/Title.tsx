@@ -18,7 +18,7 @@ export default function Title({
         <span className="text-primary">{`${workCount}개`}</span>
         {`의 할일이 있어요`}
       </div>
-      <Achivement width={67} height={67} percentage={100} />
+      <Achivement width={67} height={67} percentage={80} />
     </div>
   );
 }

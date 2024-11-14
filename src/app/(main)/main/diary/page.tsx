@@ -1,5 +1,4 @@
 "use client";
-
 import Svg from "@/components/Svg";
 import React from "react";
 import DiaryItem from "./_component/Item";
@@ -27,6 +26,12 @@ export default function page() {
         "https://www.shutterstock.com/image-photo/funny-little-kitten-looks-around-260nw-2512772793.jpg",
       content: "고양이도 넣어보자",
     },
+    {
+      id: 4,
+      date: "2024.01.03",
+      imageLink: null,
+      content: "이미지 없으면",
+    },
   ];
 
   return (
@@ -43,6 +48,7 @@ export default function page() {
         <span className="text-sub-bold text-primary">오늘 하루</span>는
         어땠나요?
       </div>
+
       <div className="mt-[32px]">
         {diaryList.map((diary) => (
           <div key={diary.id} className="mb-[40px]">
