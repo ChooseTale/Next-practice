@@ -1,0 +1,45 @@
+/* 캘린더 전체 스타일 */
+.react-calendar {
+  border: 4px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+}
+
+/* 네비게이션 바 스타일 */
+.react-calendar__navigation {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+.react-calendar__navigation button {
+  font-weight: bold;
+  color: white;
+}
+
+/* 날짜 타일 스타일 */
+.react-calendar__tile {
+  height: 50px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.react-calendar__tile:hover {
+  background-color: #f0f8ff;
+  color: #007bff;
+}
+
+.react-calendar__tile--active {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+}
+
+/* 오늘 날짜 */
+.react-calendar__tile--now {
+  background-color: #ffeb3b;
+  color: #333;
+  font-weight: bold;
+}
