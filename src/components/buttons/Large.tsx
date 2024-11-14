@@ -12,7 +12,7 @@ export default function Large({
 }) {
   return (
     <div
-      className="w-[121px] h-[48px] rounded-[70px] justify-center items-center flex bg-primary"
+      className=" w-[121px] h-[48px] rounded-[70px] justify-center items-center flex bg-primary"
       onClick={action}
     >
       <Svg

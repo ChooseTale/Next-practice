@@ -14,9 +14,12 @@ export default function ToDo() {
     <div className="w-full h-screen mt-[24px] ">
       <Title nickName="닉네임" workCount={10} />
 
-      <TodoList />
+      <div className="flex relative mt-[20px]  h-[468px] rounded-[20px] bg-backgroundSecondary overflow-y-auto z-0">
+        <TodoList />
+      </div>
+
       <div className="fixed flex left-0   bottom-[20px] justify-center w-full">
-        <div className="flex">
+        <div className="flex z-50">
           <Large text="새 할일" action={() => setIsBottomSheetVisible(true)} />
         </div>
       </div>
@@ -24,8 +27,9 @@ export default function ToDo() {
       <BottomSheet
         isVisible={isBottomSheetVisible}
         onClose={() => setIsBottomSheetVisible(false)}
-        children={<CreateTodoSheet />}
-      ></BottomSheet>
+      >
+        <CreateTodoSheet />
+      </BottomSheet>
     </div>
   );
 }
