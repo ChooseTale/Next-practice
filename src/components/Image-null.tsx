@@ -4,13 +4,17 @@ import Svg from "./Svg";
 export default function ImageNull({
   width,
   height,
+  isRounded,
 }: {
   width: number;
   height: number;
+  isRounded?: boolean;
 }) {
   return (
     <div
-      className={`w-[${width}px] h-[${height}px] rounded-[8px] bg-gray-200 flex justify-center items-center`}
+      className={`w-[${width}px] h-full ${
+        isRounded ? "rounded-[8px]" : ""
+      } bg-gray-200 flex justify-center items-center`}
     >
       <Svg
         icon="camera"

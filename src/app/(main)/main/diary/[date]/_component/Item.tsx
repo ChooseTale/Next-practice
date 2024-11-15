@@ -18,10 +18,10 @@ export default function DiaryItem({
   content,
 }: DiaryItemProps) {
   return (
-    <div>
+    <>
       <div className="text-title2-md">{date}</div>
       {/* 이미지 박스 */}
-      <div className="min-w-[320px] mt-[8px] rounded-[8px] aspect-square  relative">
+      <div className="min-w-[320px] min-h-[320px] mt-[8px] rounded-[8px] aspect-square  relative">
         {imageLink ? (
           <Image
             style={{ borderRadius: "8px" }}
@@ -31,13 +31,13 @@ export default function DiaryItem({
             objectFit="cover"
           />
         ) : (
-          <ImageNull width={320} height={320} />
+          <ImageNull width={320} height={320} isRounded={true} />
         )}
       </div>
       <div className="mt-[8px]">
         <ItemContent content={content} />
       </div>
       <CreateDiary />
-    </div>
+    </>
   );
 }

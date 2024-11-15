@@ -5,15 +5,18 @@ import React, { useState } from "react";
 export default function Input({
   label,
   isDisabled,
+  height,
   errorReg,
   errorMessage,
+
   handleValue,
 }: {
   label: string;
   isDisabled: boolean;
+  height: number;
   errorReg?: RegExp;
   errorMessage?: string;
-  handleValue?: (value: string) => void;
+  handleValue: (value: string) => void;
 }) {
   const [isFocused, setIsFocused] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -46,15 +49,18 @@ export default function Input({
         {label ?? "label"}
       </div>
       <div className="mt-[8px]">
-        <input
-          className={`w-[320px] h-[48px] border-[1px] border-gray-200 text-body-md rounded-[6px] pt-[13px] pr-[10px] pb-[13px] pl-[10px]
+        <textarea
+          className={`w-[320px] h-[${height}px] border-[1px] border-gray-200 text-body-md rounded-[6px] pt-[13px] pr-[10px] pb-[13px] pl-[10px]
+
             ${isError ? "border-systemRed" : "border-gray-200"}
             ${isDisabled ? "text-textTertiary" : "text-textDefault"}`}
           placeholder="입력해주세요."
           onFocus={handleFocus}
           onBlur={handleBlur}
           disabled={isDisabled}
-          onChange={handleError}
+          onChange={(value) => {
+            handleValue(value.target.value);
+          }}
         />
       </div>
       {isError && (
