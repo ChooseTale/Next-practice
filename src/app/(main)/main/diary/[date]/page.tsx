@@ -2,6 +2,7 @@
 import Svg from "@/components/Svg";
 import React from "react";
 import DiaryItem from "./_component/Item";
+import Link from "next/link";
 
 export default function page() {
   const diaryList = [
@@ -37,10 +38,12 @@ export default function page() {
   return (
     <div>
       <div className="flex justify-start">
-        <Svg
-          icon="chevronLeft"
-          options={{ size: { width: 24, height: 24 }, viewBox: "0 0 24 24" }}
-        />
+        <Link href={`/main?category=calendar`}>
+          <Svg
+            icon="chevronLeft"
+            options={{ size: { width: 24, height: 24 }, viewBox: "0 0 24 24" }}
+          />
+        </Link>
       </div>
       <div className="text-title-bold text-[24px]  w-[320px] mt-[32px]">
         {`닉네임님,`}

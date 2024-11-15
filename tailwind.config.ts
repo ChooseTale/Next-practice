@@ -73,6 +73,7 @@ export default {
           fontSize: "14px",
           fontWeight: "500",
           letterSpacing: "-0.02em",
+          lineHeight: "19.6px",
         },
         ".text-body3-rg": {
           fontSize: "14px",

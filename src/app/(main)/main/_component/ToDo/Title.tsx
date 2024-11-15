@@ -18,7 +18,25 @@ export default function Title({
         <span className="text-primary">{`${workCount}개`}</span>
         {`의 할일이 있어요`}
       </div>
-      <Achivement width={67} height={67} percentage={80} />
+      <div className="relative">
+        <Achivement
+          width={67}
+          height={67}
+          percentage={80}
+          viewBox="0 0 36 36"
+          circle={{ cx: 18, cy: 18, r: 15, strokeWidth: 5 }}
+        />
+        <div
+          className="absolute top-0 left-0
+      text-body-md
+      w-full h-[67px]  flex justify-center items-center"
+        >
+          80%
+        </div>
+        <div className="text-caption-md w-full text-center mt-[3px] ">
+          달성도
+        </div>
+      </div>
     </div>
   );
 }

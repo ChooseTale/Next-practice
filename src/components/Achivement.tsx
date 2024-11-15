@@ -6,10 +6,19 @@ export default function Achivement({
   width,
   height,
   percentage,
+  viewBox,
+  circle,
 }: {
   width: number;
   height: number;
   percentage: number;
+  viewBox: string;
+  circle: {
+    cx: number;
+    cy: number;
+    r: number;
+    strokeWidth: number;
+  };
 }) {
   const [progress, setProgress] = useState(0);
 
@@ -28,32 +37,34 @@ export default function Achivement({
     return () => clearInterval(interval);
   }, [percentage]);
 
-  const strokeDashoffset = -94.2 + progress * 0.942;
+  const strokeDashoffset = -2 * Math.PI * circle.r * (1 - progress / 100);
 
   return (
     <div className="relative">
-      <div className="relative flex justify-center items-center w-[67px] h-[67px] ">
+      <div
+        className={`relative flex justify-center items-center w-[${width}px] h-[${height}px] `}
+      >
         <svg
-          className="w-[67px] h-[67px] rotate-0"
-          viewBox="0 0 36 36"
+          className={`w-[${width}px] h-[${height}px] rotate-0`}
+          viewBox={viewBox}
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle
-            cx="18"
-            cy="18"
-            r="15"
+            cx={circle.cx}
+            cy={circle.cy}
+            r={circle.r}
             fill="none"
             className="stroke-current text-gray-200"
-            strokeWidth="5"
+            strokeWidth={circle.strokeWidth}
           ></circle>
           <circle
-            cx="18"
-            cy="18"
-            r="15"
+            cx={circle.cx}
+            cy={circle.cy}
+            r={circle.r}
             fill="none"
             className="stroke-current text-primary"
-            strokeWidth="5"
-            strokeDasharray="94.2"
+            strokeWidth={circle.strokeWidth}
+            strokeDasharray={2 * Math.PI * circle.r}
             strokeDashoffset={strokeDashoffset}
             strokeLinecap="round"
             style={{
@@ -63,14 +74,6 @@ export default function Achivement({
           ></circle>
         </svg>
       </div>
-      <div
-        className="absolute top-0 left-0
-      text-body-md
-      w-full h-[67px]  flex justify-center items-center"
-      >
-        {percentage}%
-      </div>
-      <div className="text-caption-md w-full text-center mt-[3px] ">달성도</div>
     </div>
   );
 }
