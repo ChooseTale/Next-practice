@@ -50,6 +50,7 @@ export default function Input({
       </div>
       <div className="mt-[8px]">
         <textarea
+          style={{ overflow: "hidden" }}
           className={`w-[320px] h-[${height}px] border-[1px] border-gray-200 text-body-md rounded-[6px] pt-[13px] pr-[10px] pb-[13px] pl-[10px]
 
             ${isError ? "border-systemRed" : "border-gray-200"}

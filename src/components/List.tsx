@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import CheckBoxEmpty from "./CheckBoxEmpty";
 import useCheckbox from "@/hooks/UseCheckbox";
 import { useTodoStore } from "@/store/todo";
+import { deleteUserTodo, updateUserTodo } from "@/app/_api/todo";
 
 export default function List({
   id,
@@ -47,6 +48,11 @@ export default function List({
               isChecked={isChecked}
               handleCheckboxClick={() => {
                 setIsDone(id, !isDone);
+                updateUserTodo(id, {
+                  id: id,
+                  title: title,
+                  isDone: !isDone,
+                });
                 handleCheckboxClick();
               }}
             />
@@ -59,7 +65,10 @@ export default function List({
       >
         <div
           className="text-body3-md text-white mr-[12px]"
-          onClick={handleDeleteButton}
+          onClick={() => {
+            handleDeleteButton();
+            deleteUserTodo(id);
+          }}
         >
           삭제
         </div>

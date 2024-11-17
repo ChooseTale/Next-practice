@@ -13,7 +13,6 @@ export default function Title({
   isDoneCount: number;
 }) {
   const [percentage, setPercentage] = useState(0);
-  console.log(isDoneCount, workCount);
   useEffect(() => {
     setPercentage(Math.floor((isDoneCount / workCount) * 100));
   }, [isDoneCount, workCount]);

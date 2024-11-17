@@ -39,7 +39,9 @@ export default function ToDo() {
         isVisible={isBottomSheetVisible}
         onClose={() => setIsBottomSheetVisible(false)}
       >
-        <CreateTodoSheet />
+        <CreateTodoSheet
+          handleClickSaveButton={() => setIsBottomSheetVisible(false)}
+        />
       </BottomSheet>
     </div>
   );

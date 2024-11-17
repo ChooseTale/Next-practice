@@ -1,4 +1,4 @@
-import { Todo } from "@/store/todo";
+import { Todo, useTodoStore } from "@/store/todo";
 
 export const userTodoList = [
   {
@@ -63,5 +63,15 @@ export const getUserTodoList: (userId: number) => Todo[] = (userId: number) => {
 };
 
 export const createUserTodo = (userId: number, todo: Todo) => {
-  return userTodoList.push(todo);
+  userTodoList.push(todo);
+};
+
+export const updateUserTodo = (id: number, todo: Todo) => {
+  const index = userTodoList.findIndex((todo) => todo.id === id);
+  userTodoList[index] = todo;
+};
+
+export const deleteUserTodo = (id: number) => {
+  const index = userTodoList.findIndex((todo) => todo.id === id);
+  userTodoList.splice(index, 1);
 };

@@ -25,12 +25,14 @@ const BottomSheet: React.FC<BottomSheetProps> = ({
   return (
     <div
       className={`fixed inset-0 flex justify-center items-end bg-black bg-opacity-20 transition-opacity duration-300 z-50 ${
-        isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        isOpen ? "visible" : " invisible"
       }`}
       onClick={handleClose}
     >
       <div
-        className="bg-white w-full h-[80%] max-w-md rounded-t-[20px] shadow-lg p-4 "
+        className={`bg-white w-full h-[80%] max-w-md rounded-t-[20px] shadow-lg p-4 transition-transform duration-300 ${
+          isOpen ? "translate-y-0" : "translate-y-full"
+        }`}
         onClick={(e) => e.stopPropagation()}
       >
         {children}
