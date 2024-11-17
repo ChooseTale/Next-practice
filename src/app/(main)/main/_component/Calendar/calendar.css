@@ -20,8 +20,7 @@
 }
 
 .react-calendar__tile:hover {
-  background-color: #f0f8ff;
-  color: #007bff;
+  background-color: #ffffff;
 }
 
 .react-calendar__tile--active {

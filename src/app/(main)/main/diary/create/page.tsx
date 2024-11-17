@@ -3,13 +3,21 @@ import Save from "@/components/buttons/Save";
 import ImageNull from "@/components/Image-null";
 import Input from "@/components/input/Input";
 import Svg from "@/components/Svg";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function Page() {
+  const router = useRouter();
+
   return (
     <>
       <div className="flex w-full flex-row items-center justify-between h-[48px]">
-        <div>
+        <div
+          onClick={() => {
+            router.back();
+          }}
+        >
           <Svg
             icon="chevronLeft"
             options={{ size: { width: 24, height: 24 } }}

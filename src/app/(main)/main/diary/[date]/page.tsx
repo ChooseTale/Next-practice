@@ -37,7 +37,7 @@ export default function page() {
 
   return (
     <div>
-      <div className="flex justify-start">
+      <div className="flex justify-start h-[48px] items-center">
         <Link href={`/main?category=calendar`}>
           <Svg
             icon="chevronLeft"

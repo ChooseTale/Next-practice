@@ -3,21 +3,26 @@
 import React, { useState } from "react";
 import CheckBoxEmpty from "./CheckBoxEmpty";
 import useCheckbox from "@/hooks/UseCheckbox";
+import { useTodoStore } from "@/store/todo";
 
 export default function List({
+  id,
   title,
   isDone,
 }: {
+  id: number;
   title: string;
   isDone: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { setIsDone, setTodoDelete } = useTodoStore();
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleDeleteButton = () => {};
+  const handleDeleteButton = () => {
+    setTodoDelete(id);
+  };
 
   const { isChecked, handleCheckboxClick } = useCheckbox(isDone);
 
@@ -40,7 +45,10 @@ export default function List({
           <div className="flex ml-[8px]">
             <CheckBoxEmpty
               isChecked={isChecked}
-              handleCheckboxClick={handleCheckboxClick}
+              handleCheckboxClick={() => {
+                setIsDone(id, !isDone);
+                handleCheckboxClick();
+              }}
             />
           </div>
         </div>

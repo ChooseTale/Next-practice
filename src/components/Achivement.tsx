@@ -27,6 +27,8 @@ export default function Achivement({
       setProgress((prevProgress) => {
         if (prevProgress < percentage) {
           return prevProgress + 1;
+        } else if (prevProgress > percentage) {
+          return prevProgress - 1;
         } else {
           clearInterval(interval);
           return prevProgress;
