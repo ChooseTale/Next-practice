@@ -1,7 +1,7 @@
 "use client";
 
 import SegmentedControl from "@/components/SegmentedControl";
-import React from "react";
+import React, { Suspense } from "react";
 
 import { useRouter, useSearchParams } from "next/navigation";
 export default function SelectCategory() {
@@ -23,19 +23,21 @@ export default function SelectCategory() {
     throw new Error("Invalid category");
 
   return (
-    <SegmentedControl
-      items={[
-        {
-          text: "투두",
-          isSelected: searchParams.get("category") === "todo",
-          action: () => handleClick("todo"),
-        },
-        {
-          text: "캘린더",
-          isSelected: searchParams.get("category") === "calendar",
-          action: () => handleClick("calendar"),
-        },
-      ]}
-    />
+    <Suspense fallback={<div>Loading...</div>}>
+      <SegmentedControl
+        items={[
+          {
+            text: "투두",
+            isSelected: searchParams.get("category") === "todo",
+            action: () => handleClick("todo"),
+          },
+          {
+            text: "캘린더",
+            isSelected: searchParams.get("category") === "calendar",
+            action: () => handleClick("calendar"),
+          },
+        ]}
+      />
+    </Suspense>
   );
 }

@@ -9,7 +9,7 @@ import DropDown from "@/components/DropDown";
 export default function CalendarSheet() {
   const router = useRouter();
 
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const [currentDate] = useState(new Date());
 
   const isCurrentMonth = (date: Date) => {
     return date.getMonth() === new Date().getMonth();
@@ -41,10 +41,10 @@ export default function CalendarSheet() {
       <Calendar
         showNavigation={false}
         // showNeighboringMonth={false}
-        formatShortWeekday={(locale, date) => {
+        formatShortWeekday={() => {
           return "";
         }}
-        tileContent={({ date, view }) => {
+        tileContent={({ date }) => {
           if (isCurrentMonth(date)) {
             return (
               <>

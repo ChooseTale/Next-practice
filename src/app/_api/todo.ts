@@ -1,4 +1,4 @@
-import { Todo, useTodoStore } from "@/store/todo";
+import { Todo } from "@/store/todo";
 
 export const userTodoList = [
   {
@@ -58,11 +58,11 @@ export const userTodoList = [
   },
 ];
 
-export const getUserTodoList: (userId: number) => Todo[] = (userId: number) => {
+export const getUserTodoList: () => Todo[] = () => {
   return userTodoList;
 };
 
-export const createUserTodo = (userId: number, todo: Todo) => {
+export const createUserTodo = (todo: Todo) => {
   userTodoList.push(todo);
 };
 

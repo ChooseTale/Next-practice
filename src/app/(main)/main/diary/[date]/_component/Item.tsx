@@ -17,6 +17,7 @@ export default function DiaryItem({
   imageLink,
   content,
 }: DiaryItemProps) {
+  console.log(id);
   return (
     <>
       <div className="text-title2-md">{date}</div>
@@ -31,7 +32,7 @@ export default function DiaryItem({
             objectFit="cover"
           />
         ) : (
-          <ImageNull width={320} height={320} isRounded={true} />
+          <ImageNull width={320} isRounded={true} />
         )}
       </div>
       <div className="mt-[8px]">

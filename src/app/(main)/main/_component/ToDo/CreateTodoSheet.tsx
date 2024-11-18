@@ -22,7 +22,7 @@ export default function CreateTodoSheet({
 
   const { setTodoListByServer } = useTodoStore();
   const handleNewTodoSave = () => {
-    createUserTodo(1, {
+    createUserTodo({
       id: userTodoList.length + 1,
       title: newTodoData.title,
       isDone: false,

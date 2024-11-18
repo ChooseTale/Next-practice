@@ -3,11 +3,11 @@ import Svg from "./Svg";
 
 export default function ImageNull({
   width,
-  height,
+
   isRounded,
 }: {
   width: number;
-  height: number;
+
   isRounded?: boolean;
 }) {
   return (

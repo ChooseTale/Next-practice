@@ -1,14 +1,20 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import React from "react";
+import React, { Suspense } from "react";
 import ToDo from "./_component/ToDo";
 import Calendar from "./_component/Calendar/Calendar";
 
-export default function Page() {
+function Content() {
+  "use client";
   const searchParams = useSearchParams();
+  return searchParams.get("category") === "todo" ? <ToDo /> : <Calendar />;
+}
 
+export default function Page() {
   return (
-    <>{searchParams.get("category") === "todo" ? <ToDo /> : <Calendar />}</>
+    <Suspense>
+      <Content />
+    </Suspense>
   );
 }

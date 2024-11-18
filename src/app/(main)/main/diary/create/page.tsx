@@ -3,7 +3,6 @@ import Save from "@/components/buttons/Save";
 import ImageNull from "@/components/Image-null";
 import Input from "@/components/input/Input";
 import Svg from "@/components/Svg";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -28,7 +27,7 @@ export default function Page() {
         </div>
       </div>
       <div className="h-[320px] mt-[20px]">
-        <ImageNull width={320} height={320} isRounded={false} />
+        <ImageNull width={320} isRounded={false} />
       </div>
       <div className="mt-[32px] w-full">
         <Input

@@ -1,7 +1,7 @@
 "use client";
 
 import List from "@/components/List";
-import React, { useState } from "react";
+import React from "react";
 
 type Todo = {
   id: number;

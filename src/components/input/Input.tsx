@@ -18,18 +18,18 @@ export default function Input({
   errorMessage?: string;
   handleValue: (value: string) => void;
 }) {
-  const [isFocused, setIsFocused] = useState(false);
+  // const [isFocused, setIsFocused] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  const handleFocus = () => {
-    setIsFocused(true);
-  };
+  // const handleFocus = () => {
+  //   setIsFocused(true);
+  // };
 
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
+  // const handleBlur = () => {
+  //   setIsFocused(false);
+  // };
 
-  const handleError = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleError = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (!errorReg) return;
     if (!errorReg.test(e.target.value) && e.target.value !== "") {
       setIsError(true);
@@ -56,11 +56,12 @@ export default function Input({
             ${isError ? "border-systemRed" : "border-gray-200"}
             ${isDisabled ? "text-textTertiary" : "text-textDefault"}`}
           placeholder="입력해주세요."
-          onFocus={handleFocus}
-          onBlur={handleBlur}
+          // onFocus={handleFocus}
+          // onBlur={handleBlur}
           disabled={isDisabled}
           onChange={(value) => {
             handleValue(value.target.value);
+            handleError(value);
           }}
         />
       </div>

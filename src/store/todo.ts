@@ -18,7 +18,7 @@ export const useTodoStore = create<TodoStore>((set) => ({
   todoList: [],
   setTodoListByServer: () =>
     set(() => ({
-      todoList: getUserTodoList(1),
+      todoList: getUserTodoList(),
     })),
   setIsDone: (id: number, isDone: boolean) =>
     set((state) => ({
