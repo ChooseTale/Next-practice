@@ -1,6 +1,7 @@
 "use client";
 
 import Achivement from "@/components/Achivement";
+import useWindowSize from "@/hooks/UseWindowSize";
 import React, { useEffect, useState } from "react";
 
 export default function Title({
@@ -17,11 +18,13 @@ export default function Title({
     setPercentage(Math.floor((isDoneCount / workCount) * 100));
   }, [isDoneCount, workCount]);
 
+  const device = useWindowSize();
+
   return (
     <div className="flex flex-row items-center justify-between">
-      <div className="w-[237px] h-[87px]  text-title-bold">
+      <div className="w-full h-[87px]  text-title-bold">
         {`${nickName}님 오늘은`}
-        <br />
+        {device.device === "mobile" && <br />}
         <span className="text-primary">{`${workCount - isDoneCount}개`}</span>
         {`의 할일이 있어요`}
       </div>

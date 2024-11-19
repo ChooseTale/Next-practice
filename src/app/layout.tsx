@@ -20,9 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${pretendard.variable} flex flex-col items-center justify-center `}
+        className={`flex ${pretendard.variable} flex flex-col items-center justify-center `}
       >
-        <div className="ml-[20px] mr-[20px] w-[320px]">{children}</div>
+        <div className=" w-full justify-center">
+          <div className="min-w-[320px] w-[calc(100%-40px)] ml-[20px] mr-[20px] ">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );

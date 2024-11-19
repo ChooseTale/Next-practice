@@ -40,9 +40,9 @@ export default function Input({
   };
 
   return (
-    <div className="w-[320px]">
+    <div className="w-full">
       <div
-        className={`w-[320px] h-[22px] text-body-md ${
+        className={`w-full h-[22px] text-body-md ${
           isDisabled ? "text-textTertiary" : "text-textDefault"
         }`}
       >
@@ -51,7 +51,7 @@ export default function Input({
       <div className="mt-[8px]">
         <textarea
           style={{ overflow: "hidden" }}
-          className={`w-[320px] h-[${height}px] border-[1px] border-gray-200 text-body-md rounded-[6px] pt-[13px] pr-[10px] pb-[13px] pl-[10px]
+          className={`w-full h-[${height}px] border-[1px] border-gray-200 text-body-md rounded-[6px] pt-[13px] pr-[10px] pb-[13px] pl-[10px]
 
             ${isError ? "border-systemRed" : "border-gray-200"}
             ${isDisabled ? "text-textTertiary" : "text-textDefault"}`}

@@ -61,7 +61,7 @@ export default function CreateTodoSheet({
           handleValue={handleTitle}
         />
       </div>
-      <div className="mt-[24px]">
+      <div className="mt-[24px] ">
         <Input
           height={48}
           label="날짜"
@@ -69,7 +69,7 @@ export default function CreateTodoSheet({
           handleValue={handleDate}
         />
       </div>
-      <div className="mt-[24px] w-[320px] flex justify-between">
+      <div className="mt-[24px] w-full flex justify-between">
         반복
         <Toggle isSelected={isRepeat} action={handleRepeat} />
       </div>

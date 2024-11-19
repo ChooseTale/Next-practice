@@ -1,5 +1,11 @@
 import type { Config } from "tailwindcss";
 
+export const breakpoints = {
+  mobile: 768,
+  tablet: 1024,
+  desktop: 1280,
+};
+
 export const colors = {
   backgroundSecondary: "#F2F2F7",
   backgroundPrimary: "#FFFFFF",

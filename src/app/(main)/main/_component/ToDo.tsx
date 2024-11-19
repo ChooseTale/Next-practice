@@ -8,11 +8,15 @@ import BottomSheet from "@/components/BottomSheet";
 import CreateTodoSheet from "./ToDo/CreateTodoSheet";
 
 import { useTodoStore } from "@/store/todo";
+import useWindowSize from "@/hooks/UseWindowSize";
+import TodoCard from "./ToDo/Tablet/TodoCard";
 
 export default function ToDo() {
   const [isBottomSheetVisible, setIsBottomSheetVisible] = useState(false);
 
   const { todoList, setTodoListByServer } = useTodoStore();
+
+  const device = useWindowSize();
 
   useEffect(() => {
     setTodoListByServer();
@@ -25,9 +29,16 @@ export default function ToDo() {
         isDoneCount={todoList.filter((todo) => todo.isDone).length}
       />
 
-      <div className="flex relative mt-[20px]  h-[468px] rounded-[20px] bg-backgroundSecondary overflow-y-auto z-0">
-        <TodoList todoList={todoList} />
-      </div>
+      {device.device === "mobile" && (
+        <div className="flex w-full relative mt-[20px]  h-[468px] rounded-[20px] bg-backgroundSecondary overflow-y-auto z-0">
+          <TodoList todoList={todoList} />
+        </div>
+      )}
+      {device.device === "tablet" && (
+        <div className="flex w-full relative mt-[20px]  h-[562px] rounded-[20px] bg-backgroundSecondary overflow-y-auto z-0">
+          <TodoCard todoList={todoList} />
+        </div>
+      )}
 
       <div className="fixed flex left-0   bottom-[20px] justify-center w-full">
         <div className="flex z-50">
